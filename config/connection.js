@@ -1,6 +1,7 @@
 var mysql = require("mysql");
 
 var connection = mysql.createConnection({
+  port: 3306,
   host: process.env.DB_HOST,
   username: process.env.DB_USER,
   database: "pizza_db"
