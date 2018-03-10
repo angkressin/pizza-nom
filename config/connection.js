@@ -1,20 +1,24 @@
 var mysql = require("mysql");
+var connection
 // require("dotenv").config();
 
-var connection = mysql.createConnection(
-  process.env.DATABASE_URL
-  // {
-  // port: 3306,
-  // host: "localhost",
-  // user: "root",
-  // password: "root",
-  // host: process.env.DATABASE_URL,
-  // user: process.env.DATABASE_URL,
-  // password: process.env.DATABASE_URL,
-  // database: "pizza_db"
-  // socketPath: "/var/run/mysqld/mysqld.sock"
-// }
-);
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL)
+} else {
+  connection = mysql.createConnection({
+    port: 3306,
+    host: "localhost",
+    user: "root",
+    password: "root",
+    // port: 3306,
+    // host: process.env.DB_HOST,
+    // user: process.env.DB_USER,
+    // password: process.env.DB_PASSWORD,
+    database: "pizza_db"
+    // socketPath: "/var/run/mysqld/mysqld.sock"
+  });
+}
+
 
 // Make connection.
 connection.connect(function(err) {
