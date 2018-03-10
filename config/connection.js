@@ -6,11 +6,11 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "root",
-  socketPath: "/var/run/mysqld/mysqld.sock",
   // host: process.env.DB_HOST,
   // user: process.env.DB_USER,
   // password: process.env.DB_PASSWORD,
-  database: "pizza_db"
+  database: "pizza_db",
+  socketPath: "/var/run/mysqld/mysqld.sock"
 });
 
 // Make connection.
