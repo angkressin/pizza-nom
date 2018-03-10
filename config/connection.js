@@ -2,7 +2,7 @@ var mysql = require("mysql");
 // require("dotenv").config();
 
 var connection = mysql.createConnection({
-  port: 3306,
+  // port: 3306,
   host: "localhost",
   user: "root",
   password: "root",
