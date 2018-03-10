@@ -18,14 +18,14 @@ router.get("/", function(req, res) {
 
 
 router.post("/api/pizza", function(req, res) {
-  // if (req.body.pizza_name === "") {
-  //   return false;
-  // } else {
+  if (req.body.pizza_name === "") {
+    return false;
+  } else {
   pizza.insertOne(["pizza_name", "devoured"], [req.body.pizza_name, req.body.devoured], function(result) {
     // Send back the ID of the new pizza
     res.json({ id: result.insertId });
   });
-// }
+}
 });
 
 router.put("/api/pizza/:id", function(req, res) {
