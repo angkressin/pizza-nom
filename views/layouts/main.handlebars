@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Lato|Rammetto+One" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
+	<title>Eat the pizza!</title>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<!-- <script src="/assets/js/pizza.js"></script> -->
+</head>
+
+<body>
+	{{{ body }}}
+
+	<script type="text/javascript">
+
+		$(".delpizza").on("click", function() {
+			var id = $(this).data("pizzaid");
+			// Send the DELETE request.
+			$.ajax("/api/pizza/" + id, {
+				type: "DELETE"
+			}).then(
+				function() {
+					console.log("deleted id: ", id);
+					// Reload the page to get the updated list
+					location.reload();
+				}
+			);
+		});
+
+		$("#addPizza").on("click", function() {
+
+			var newPizzaType = {
+				pizza_name: $("#newPizza").val().trim()
+			};
+				// Send the POST request.
+				$.ajax("/api/pizza", {
+					type: "POST",
+					data: newPizzaType
+				}).then(
+					function() {
+						console.log("new pizza added:" + newPizzaType);
+						// Reload the page to get the updated list
+						location.reload();
+					})
+		});
+
+		$("#eaten").on("click", function() {
+			var id = $(this).data("pizzaid");
+			var eatenPizza = {
+				devoured: true
+			};
+			// Send the PUT request.
+			$.ajax("/api/pizza/" + id, {
+				type: "PUT",
+				data: eatenPizza
+			}).then(
+				function() {
+					console.log("updated eaten pizza: ", id);
+					// Reload the page to get the updated list
+					location.reload();
+				}
+			);
+		});
+	</script>
+
+</body>
+
+</html>

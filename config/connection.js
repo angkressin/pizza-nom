@@ -2,8 +2,12 @@ var mysql = require("mysql");
 
 var connection = mysql.createConnection({
   port: 3306,
-  host: process.env.DB_HOST,
-  username: process.env.DB_USER,
+  host: "localhost",
+  user: "root",
+  password: "root",
+  // host: process.env.DB_HOST,
+  // username: process.env.DB_USER,
+  // password: process.env.DB_PASSWORD,
   database: "pizza_db"
 });
 

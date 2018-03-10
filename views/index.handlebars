@@ -1,0 +1,45 @@
+<div class="bg">
+  <div class="container">
+    <img class="pizza-img" src="/assets/img/pizza.png">
+    <h1 class="text-center">PIZZA NOM NOM!</h1>
+
+    <h3 class="text-center">Add a new pizza below</h3>
+    <form class="text-center">
+      <div class="form-group">
+        <textarea class="form-control" id="newPizza" rows="3" placeholder="mushroom and peppers"></textarea>
+      </div>
+      <button type="submit" id="addPizza" class="btn btn-primary">Add</button>
+    </form>
+
+  
+    <div class="blank-space"></div>
+    <div class="row">
+      <div class="col">
+        <p class="text-center col-title">Fresh pizzas ready to be eaten</p>
+        {{#each pizza}}
+          {{#unless devoured}}
+            <div class="pizza_display">
+              {{this.pizza_name}}
+              <button data-pizzaid="{{this.id}}" class="delpizza del-btn"><i class="fas fa-trash-alt"></i></button>
+              <button data-pizzaid="{{this.id}}" class="eat-btn" id="eaten">Eat it!</button>
+            </div>
+          {{/unless}}
+        {{/each}}
+      </div>
+      <div class="col">
+        <p class="text-center col-title">Pizzas that are yum yum in my tum tum</p>
+        {{#each pizza}}
+          {{#if devoured}}
+            <div class="eaten_pizza_display">
+              {{this.pizza_name}}
+              <button data-pizzaid="{{this.id}}" class="delpizza del-btn"><i class="fas fa-trash-alt"></i></button>
+            </div>
+          {{/if}}
+        {{/each}}
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

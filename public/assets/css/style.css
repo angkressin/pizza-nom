@@ -1,0 +1,71 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  font-family: 'Rammetto One', cursive;
+}
+
+.bg {
+  background-image: url("../img/bg.jpeg");
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.pizza-img {
+  width: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+}
+
+.pizza_display {
+  border: 1px solid red;
+  background-color: #fff;
+  margin-top: 5px;
+  padding: 3px;
+}
+
+.eaten_pizza_display {
+  border: 1px solid red;
+  background-color: #d9d9d9;
+  margin-top: 5px;
+  padding: 3px;
+}
+
+.blank-space {
+  height: 30px;
+}
+
+.col-title {
+  color: white;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.del-btn {
+  float: right;
+  font-size: .8rem;
+  padding: auto;
+}
+
+.eat-btn {
+  float: right;
+  margin-right: 2px;
+  font-size: .8rem;
+  padding: auto;
+}
+
+.del-btn:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+.eat-btn:hover {
+  opacity: .7;
+  cursor: pointer;
+}
