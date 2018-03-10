@@ -15,7 +15,6 @@ if (process.env.JAWSDB_URL) {
     // user: process.env.DB_USER,
     // password: process.env.DB_PASSWORD,
     database: "pizza_db"
-    // socketPath: "/var/run/mysqld/mysqld.sock"
   });
 }
 
