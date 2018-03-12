@@ -8,7 +8,7 @@ h1 {
 
 .bg {
   background-image: url("../img/bg.jpeg");
-  height: 100vh;
+  height: calc(100vh - 2rem);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -66,4 +66,12 @@ h1 {
 .eat-btn:hover {
   opacity: .7;
   cursor: pointer;
+}
+
+.footer {
+  width: 100%;
+  font-size: 0.5rem;
+  padding-top: .3rem;
+  padding-bottom: .6rem;
+  background-color: #fff;
 }
